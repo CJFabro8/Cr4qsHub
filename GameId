@@ -1,0 +1,13 @@
+if game.PlaceId == 10702033108 then
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/Bloody%20Ragdoll%20Engine'),true))()
+elseif game.PlaceId == 10819569010 then
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/make%20roblox%20games%20to%20become%20rich%20and%20famous'),true))()
+elseif game.PlaceId == 5032892136 then
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/An%20Infinite%20Road%20Trip'),true))()
+elseif game.PlaceId == 6441847031 then
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/Chaos'),true))()
+elseif game.PlaceId == 6191637341 then
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/Weapon%20Simulator%202'),true))()
+else
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/Cr4qsHub/main/Universal/UniversalOne'),true))()
+end
