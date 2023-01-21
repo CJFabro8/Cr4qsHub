@@ -1,0 +1,139 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Player = game.Players.LocalPlayer
+
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "Cr4qs"})
+
+OrionLib:MakeNotification({
+	Name = "Logged In!",
+	Content = "Hello "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "Cr4qsIsApple"
+_G.KeyInput = "string"
+
+function MakeScriptHub()	
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Cr4qs -- Snow Shoveling Simulator", "Synapse")
+
+local Tab = Window:NewTab("TabName")
+
+local Section = Tab:NewSection("Section Name")
+
+Section:NewButton("SuperHuman", "ButtonInfo", function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 200
+end)
+
+Section:NewButton("PenguinCoincilBadge", "ButtonInfo", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(210.34231567382812, 25.048677444458008, 141.25035095214844)
+end)
+
+Section:NewButton("Teleport To Frosty", "ButtonInfo", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(544.8192138671875, 15.757467269897461, -86.64263916015625)
+end)
+
+Section:NewButton("FastTools", "ButtonInfo", function()
+	for _,t in pairs(getgc(true)) do
+if type(t) == 'table' then
+    if rawget(t, "Speed") then
+     rawset(t, "Speed", 0)
+    end
+end
+end
+end)
+
+Section:NewToggle("AutoSell", "ToggleInfo", function(state)
+    if state then
+        _G.loop = true
+        while _G.loop == true do wait()
+        local args = {
+    [1] = "SellSnow",
+    [2] = "Frosty"
+}
+
+game:GetService("ReplicatedStorage").Modules.Network.RemoteEvent:FireServer(unpack(args))
+
+    end
+    else
+        _G.loop = false
+        while _G.loop == true do wait()
+        local args = {
+    [1] = "SellSnow",
+    [2] = "Frosty"
+}
+
+game:GetService("ReplicatedStorage").Modules.Network.RemoteEvent:FireServer(unpack(args))
+
+        end
+    end
+end)
+
+Section:NewButton("AutoClicker CLICK DOTS", "v to activate", function()
+	local time = 0.01 --decrease if too slow increase if too fast
+
+click = false
+m = game.Players.LocalPlayer:GetMouse()
+m.KeyDown:connect(function(key)
+if key == "v" then
+if click == true then click = false
+elseif
+click == false then click = true
+
+while click == true do 
+wait(time)
+mouse1click()
+end
+end
+end
+end)
+end)
+
+end
+
+function CorrectKeyNotification()
+	OrionLib:MakeNotification({
+	Name = "Key",
+	Content = "Correct Key Enjoy!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function IncorrectKeyNotification()
+	OrionLib:MakeNotification({
+	Name = "Key",
+	Content = "Incorrect Key Sorry!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      	if _G.KeyInput == _G.Key then
+      	MakeScriptHub()
+      	CorrectKeyNotification()
+      	else
+      		 IncorrectKeyNotification()
+      	end
+  	end    
+})
